@@ -1,0 +1,90 @@
+﻿@model madi_care.Models.doctor
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>doctor</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dphone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dphone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.daddresss)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.daddresss)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dgender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dgender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dqualification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dqualification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dpassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dpassword)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.admin.aname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admin.aname)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.did }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

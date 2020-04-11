@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="medi_careModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="admin">
+    <Key>
+      <PropertyRef Name="aid" />
+    </Key>
+    <Property Name="aid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="aname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="aphone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="aaddress" Type="varchar" MaxLength="500" />
+    <Property Name="agender" Type="varchar" MaxLength="5" />
+    <Property Name="aemail" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="apassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="abirth_date" Type="varchar" MaxLength="50" />
+    <Property Name="aage" Type="varchar" MaxLength="5" />
+  </EntityType>
+  <EntityType Name="blood_donation">
+    <Key>
+      <PropertyRef Name="blood_donation_id" />
+    </Key>
+    <Property Name="blood_donation_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="last_donation" Type="varchar" MaxLength="50" />
+    <Property Name="donation_details" Type="varchar" MaxLength="100" />
+    <Property Name="pid" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="doctor">
+    <Key>
+      <PropertyRef Name="did" />
+    </Key>
+    <Property Name="did" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="dname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="dphone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="daddresss" Type="varchar" MaxLength="500" />
+    <Property Name="dgender" Type="varchar" MaxLength="10" />
+    <Property Name="dqualification" Type="varchar" MaxLength="150" />
+    <Property Name="dmail" Type="varchar" MaxLength="50" />
+    <Property Name="dpassword" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="aid" Type="int" Nullable="false" />
+    <Property Name="dage" Type="varchar" MaxLength="4" />
+  </EntityType>
+  <EntityType Name="emergency">
+    <Key>
+      <PropertyRef Name="emergencyid" />
+    </Key>
+    <Property Name="emergencyid" Type="int" Nullable="false" />
+    <Property Name="emergency_num1" Type="varchar" MaxLength="11" />
+    <Property Name="emergency_num2" Type="varchar" MaxLength="11" />
+    <Property Name="pid" Type="int" />
+  </EntityType>
+  <EntityType Name="patient">
+    <Key>
+      <PropertyRef Name="pid" />
+    </Key>
+    <Property Name="pid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="pname" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="pphone" Type="varchar" MaxLength="11" Nullable="false" />
+    <Property Name="paddress" Type="varchar" MaxLength="500" />
+    <Property Name="page" Type="varchar" MaxLength="3" />
+    <Property Name="pblood_group" Type="varchar" MaxLength="5" />
+    <Property Name="pgender" Type="varchar" MaxLength="10" />
+    <Property Name="pweight" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="phight" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="paassword" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="pbmi" Type="varchar" MaxLength="5" />
+    <Property Name="pbmr" Type="varchar" MaxLength="5" />
+    <Property Name="pbp" Type="varchar" MaxLength="5" />
+    <Property Name="pbirth_date" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="plm_and_slv">
+    <Key>
+      <PropertyRef Name="plm_id" />
+    </Key>
+    <Property Name="plm_id" Type="int" Nullable="false" />
+    <Property Name="plm_details" Type="varchar" MaxLength="1000" />
+    <Property Name="plm_slv" Type="varchar" MaxLength="1000" />
+    <Property Name="pid" Type="int" />
+    <Property Name="did" Type="int" />
+  </EntityType>
+  <Association Name="FK_admin_admin">
+    <End Role="admin" Type="Self.admin" Multiplicity="1" />
+    <End Role="admin1" Type="Self.admin" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="admin">
+        <PropertyRef Name="aid" />
+      </Principal>
+      <Dependent Role="admin1">
+        <PropertyRef Name="aid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_blood_donation_blood_donation">
+    <End Role="patient" Type="Self.patient" Multiplicity="1" />
+    <End Role="blood_donation" Type="Self.blood_donation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="blood_donation">
+        <PropertyRef Name="pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_doctor_admin">
+    <End Role="admin" Type="Self.admin" Multiplicity="1" />
+    <End Role="doctor" Type="Self.doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="admin">
+        <PropertyRef Name="aid" />
+      </Principal>
+      <Dependent Role="doctor">
+        <PropertyRef Name="aid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_emergency_patient">
+    <End Role="patient" Type="Self.patient" Multiplicity="0..1" />
+    <End Role="emergency" Type="Self.emergency" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="patient">
+        <PropertyRef Name="pid" />
+      </Principal>
+      <Dependent Role="emergency">
+        <PropertyRef Name="pid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_plm_and_slv_doctor">
+    <End Role="doctor" Type="Self.doctor" Multiplicity="0..1" />
+    <End Role="plm_and_slv" Type="Self.plm_and_slv" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="doctor">
+        <PropertyRef Name="did" />
+      </Principal>
+      <Dependent Role="plm_and_slv">
+        <PropertyRef Name="did" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="medi_careModelStoreContainer">
+    <EntitySet Name="admin" EntityType="Self.admin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="blood_donation" EntityType="Self.blood_donation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="doctor" EntityType="Self.doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="emergency" EntityType="Self.emergency" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="patient" EntityType="Self.patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="plm_and_slv" EntityType="Self.plm_and_slv" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_admin_admin" Association="Self.FK_admin_admin">
+      <End Role="admin" EntitySet="admin" />
+      <End Role="admin1" EntitySet="admin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_blood_donation_blood_donation" Association="Self.FK_blood_donation_blood_donation">
+      <End Role="patient" EntitySet="patient" />
+      <End Role="blood_donation" EntitySet="blood_donation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_doctor_admin" Association="Self.FK_doctor_admin">
+      <End Role="admin" EntitySet="admin" />
+      <End Role="doctor" EntitySet="doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_emergency_patient" Association="Self.FK_emergency_patient">
+      <End Role="patient" EntitySet="patient" />
+      <End Role="emergency" EntitySet="emergency" />
+    </AssociationSet>
+    <AssociationSet Name="FK_plm_and_slv_doctor" Association="Self.FK_plm_and_slv_doctor">
+      <End Role="doctor" EntitySet="doctor" />
+      <End Role="plm_and_slv" EntitySet="plm_and_slv" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

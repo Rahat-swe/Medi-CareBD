@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="medi_careModelStoreContainer" CdmEntityContainer="medi_careEntities2">
+    <EntitySetMapping Name="admins">
+      <EntityTypeMapping TypeName="medi_careModel.admin">
+        <MappingFragment StoreEntitySet="admin">
+          <ScalarProperty Name="aid" ColumnName="aid" />
+          <ScalarProperty Name="aname" ColumnName="aname" />
+          <ScalarProperty Name="aphone" ColumnName="aphone" />
+          <ScalarProperty Name="aaddress" ColumnName="aaddress" />
+          <ScalarProperty Name="agender" ColumnName="agender" />
+          <ScalarProperty Name="aemail" ColumnName="aemail" />
+          <ScalarProperty Name="apassword" ColumnName="apassword" />
+          <ScalarProperty Name="abirth_date" ColumnName="abirth_date" />
+          <ScalarProperty Name="aage" ColumnName="aage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blood_donation">
+      <EntityTypeMapping TypeName="medi_careModel.blood_donation">
+        <MappingFragment StoreEntitySet="blood_donation">
+          <ScalarProperty Name="blood_donation_id" ColumnName="blood_donation_id" />
+          <ScalarProperty Name="last_donation" ColumnName="last_donation" />
+          <ScalarProperty Name="donation_details" ColumnName="donation_details" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="doctors">
+      <EntityTypeMapping TypeName="medi_careModel.doctor">
+        <MappingFragment StoreEntitySet="doctor">
+          <ScalarProperty Name="did" ColumnName="did" />
+          <ScalarProperty Name="dname" ColumnName="dname" />
+          <ScalarProperty Name="dphone" ColumnName="dphone" />
+          <ScalarProperty Name="daddresss" ColumnName="daddresss" />
+          <ScalarProperty Name="dgender" ColumnName="dgender" />
+          <ScalarProperty Name="dqualification" ColumnName="dqualification" />
+          <ScalarProperty Name="dmail" ColumnName="dmail" />
+          <ScalarProperty Name="dpassword" ColumnName="dpassword" />
+          <ScalarProperty Name="aid" ColumnName="aid" />
+          <ScalarProperty Name="dage" ColumnName="dage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="emergencies">
+      <EntityTypeMapping TypeName="medi_careModel.emergency">
+        <MappingFragment StoreEntitySet="emergency">
+          <ScalarProperty Name="emergencyid" ColumnName="emergencyid" />
+          <ScalarProperty Name="emergency_num1" ColumnName="emergency_num1" />
+          <ScalarProperty Name="emergency_num2" ColumnName="emergency_num2" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="patients">
+      <EntityTypeMapping TypeName="medi_careModel.patient">
+        <MappingFragment StoreEntitySet="patient">
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="pname" ColumnName="pname" />
+          <ScalarProperty Name="pphone" ColumnName="pphone" />
+          <ScalarProperty Name="paddress" ColumnName="paddress" />
+          <ScalarProperty Name="page" ColumnName="page" />
+          <ScalarProperty Name="pblood_group" ColumnName="pblood_group" />
+          <ScalarProperty Name="pgender" ColumnName="pgender" />
+          <ScalarProperty Name="pweight" ColumnName="pweight" />
+          <ScalarProperty Name="phight" ColumnName="phight" />
+          <ScalarProperty Name="paassword" ColumnName="paassword" />
+          <ScalarProperty Name="pbmi" ColumnName="pbmi" />
+          <ScalarProperty Name="pbmr" ColumnName="pbmr" />
+          <ScalarProperty Name="pbp" ColumnName="pbp" />
+          <ScalarProperty Name="pbirth_date" ColumnName="pbirth_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plm_and_slv">
+      <EntityTypeMapping TypeName="medi_careModel.plm_and_slv">
+        <MappingFragment StoreEntitySet="plm_and_slv">
+          <ScalarProperty Name="plm_id" ColumnName="plm_id" />
+          <ScalarProperty Name="plm_details" ColumnName="plm_details" />
+          <ScalarProperty Name="plm_slv" ColumnName="plm_slv" />
+          <ScalarProperty Name="pid" ColumnName="pid" />
+          <ScalarProperty Name="did" ColumnName="did" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

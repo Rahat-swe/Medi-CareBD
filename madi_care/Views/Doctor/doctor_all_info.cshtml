@@ -1,0 +1,87 @@
+﻿@model IEnumerable<madi_care.Models.doctor>
+
+@{
+    ViewBag.Title = "doctor_all_info";
+}
+
+<h2>doctor_all_info</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.did)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dphone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.daddresss)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dgender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dqualification)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dpassword)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.aid)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dage)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.did)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dphone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.daddresss)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dgender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dqualification)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dpassword)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aid)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dage)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

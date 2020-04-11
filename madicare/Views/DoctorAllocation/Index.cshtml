@@ -1,0 +1,86 @@
+﻿@model IEnumerable<madicare.Models.Doctor>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.dname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dphone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.daddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dgender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.demail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dpassword)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ddate_of_brith)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.dqualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.villageDetails)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.dname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dphone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.daddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dgender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.demail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dpassword)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ddate_of_brith)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dqualification)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.villageDetails.VillageName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.did">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.did">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.did">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<a asp-area="" asp-controller="AdminMediCares" asp-action="Index" class="w3-bar-item w3-button w3-padding w3-blue"> BACK</a>

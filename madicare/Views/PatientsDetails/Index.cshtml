@@ -1,0 +1,99 @@
+﻿@model IEnumerable<madicare.Models.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>P A T I E N T</h1>
+
+<p>
+
+    <a class="w3-bar-item w3-button w3-padding w3-blue" asp-area="" asp-controller="PatientsDetails" asp-action="Create">Create New Patient </a>
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+              <lable>NAME</lable>
+            </th>
+            <th>
+                <lable>PHONE</lable>
+           
+            </th>
+            <th>
+                <lable>ADDRESS</lable>
+           
+            </th>
+            <th>
+                <lable>GENDER</lable>
+              
+            </th>
+            <th>
+                <lable>WEIGHT</lable>
+            
+            </th>
+            <th>
+                <lable>HIGHT</lable>
+             
+            </th>
+            <th>
+                <lable>BMI</lable>
+             </th>
+            <th>
+                <lable>BMR</lable>
+             </th>
+            <th>
+                <lable>BP</lable>
+            </th>
+            <th>
+                <lable>DATE OF BRITH</lable>
+                </th>
+         
+            <th>ACTION</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pphone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.paddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pgender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pweight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pbmi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pbmr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pbp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdate_of_brith)
+            </td>
+           
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.pid">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.pid">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.pid">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-area="" asp-controller="AdminMediCares" asp-action="Index" class="w3-bar-item w3-button w3-padding w3-blue"> BACK</a>

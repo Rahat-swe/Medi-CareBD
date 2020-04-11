@@ -1,0 +1,42 @@
+﻿@model IEnumerable<madicare.Models.VillageDetails>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a  class="w3-bar-item w3-button w3-padding w3-blue"  asp-action="Create"> Add New Village</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VillageName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.District)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VillageName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.District)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.VillageId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.VillageId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.VillageId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+<a asp-area="" asp-controller="AdminMediCares" asp-action="Index" class="w3-bar-item w3-button w3-padding w3-blue"> BACK</a>

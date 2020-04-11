@@ -1,0 +1,60 @@
+﻿@model madicare.Controllers.AdminMediCare
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>AdminMediCare</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.aname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.aname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.aphone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.aphone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.aaddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.aaddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.agender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.agender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.aemail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.aemail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.apassword)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.apassword)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.adate_of_brith)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.adate_of_brith)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.aid">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

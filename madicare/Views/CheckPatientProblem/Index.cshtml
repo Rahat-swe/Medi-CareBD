@@ -1,0 +1,94 @@
+﻿@model IEnumerable<madicare.Models.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Check Patient Problem</h1>
+
+
+<table class="table">
+    <thead>
+    <th>
+        <lable>NAME</lable>
+    </th>
+  
+    <th>
+        <lable>GENDER</lable>
+
+    </th>
+    <th>
+        <lable>WEIGHT</lable>
+
+    </th>
+   
+    <th>
+        <lable>BMI</lable>
+    </th>
+    <th>
+        <lable>BMR</lable>
+    </th>
+    <th>
+        <lable>BP</lable>
+    </th>
+    <th>
+        <lable>DATE OF BRITH</lable>
+    </th>
+        
+    <th>
+        <lable>DISEASE</lable>
+    </th>
+    <th>
+        <lable>DISEASE SLOVE</lable>
+
+    </th>
+    <th>ACTION</th>
+    </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.pname)
+            </td>
+
+
+            <td>
+                @Html.DisplayFor(modelItem => item.pgender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pweight)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.phight)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.pbmr)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pbp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdate_of_brith)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.pdisease)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.pdiseaseSlove)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.pid"> Write Prescription</a> |
+                <a asp-action="Details" asp-route-id="@item.pid">Details</a> |
+
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-area="" asp-controller="DoctorProfile" asp-action="Index" class="w3-bar-item w3-button w3-padding w3-blue"> BACK</a>

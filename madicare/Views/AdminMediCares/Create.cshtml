@@ -1,0 +1,63 @@
+﻿@model madicare.Controllers.AdminMediCare
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>AdminMediCare</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="aname" class="control-label"></label>
+                <input asp-for="aname" class="form-control" />
+                <span asp-validation-for="aname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="aphone" class="control-label"></label>
+                <input asp-for="aphone" class="form-control" />
+                <span asp-validation-for="aphone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="aaddress" class="control-label"></label>
+                <input asp-for="aaddress" class="form-control" />
+                <span asp-validation-for="aaddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="agender" class="control-label"></label>
+                <input asp-for="agender" class="form-control" />
+                <span asp-validation-for="agender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="aemail" class="control-label"></label>
+                <input asp-for="aemail" class="form-control" />
+                <span asp-validation-for="aemail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="apassword" class="control-label"></label>
+                <input asp-for="apassword" class="form-control" />
+                <span asp-validation-for="apassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="adate_of_brith" class="control-label"></label>
+                <input asp-for="adate_of_brith" class="form-control" />
+                <span asp-validation-for="adate_of_brith" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

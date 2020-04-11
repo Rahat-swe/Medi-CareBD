@@ -1,0 +1,87 @@
+﻿@model madicare.Models.Patient
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Patient</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label>NAME</label>
+                <input asp-for="pname" class="form-control" />
+                <span asp-validation-for="pname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>PHONE</label>
+                <input asp-for="pphone" class="form-control" />
+                <span asp-validation-for="pphone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>ADDESS</label>
+                <input asp-for="paddress" class="form-control" />
+                <span asp-validation-for="paddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>GENDER</label>
+                <input asp-for="pgender" class="form-control" />
+                <span asp-validation-for="pgender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>WEIGHT</label>
+                <input asp-for="pweight" class="form-control" />
+                <span asp-validation-for="pweight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>HIGHT</label>
+                <input asp-for="phight" class="form-control" />
+                <span asp-validation-for="phight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>BMI</label>
+                <input asp-for="pbmi" class="form-control" />
+                <span asp-validation-for="pbmi" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>BMR</label>
+                <input asp-for="pbmr" class="form-control" />
+                <span asp-validation-for="pbmr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>BP</label>
+                <input asp-for="pbp" class="form-control" />
+                <span asp-validation-for="pbp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <labe>
+                    DATE OF BRITH</label>
+                    <input asp-for="pdate_of_brith" class="form-control" />
+                    <span asp-validation-for="pdate_of_brith" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label>PASSWORD</label>
+                <input asp-for="ppassword" class="form-control" />
+                <span asp-validation-for="ppassword" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label>medicinne Name</label>
+                <select asp-for="mid" class="form-control" asp-items="ViewBag.mid"></select>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

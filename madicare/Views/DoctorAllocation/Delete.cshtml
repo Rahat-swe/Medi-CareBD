@@ -1,0 +1,76 @@
+﻿@model madicare.Models.Doctor
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Doctor</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dphone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dphone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.daddress)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.daddress)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dgender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dgender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.demail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.demail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dpassword)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dpassword)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ddate_of_brith)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ddate_of_brith)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.dqualification)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.dqualification)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.villageDetails)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.villageDetails.VillageName)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="did" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
